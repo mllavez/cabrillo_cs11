@@ -2,11 +2,17 @@
 using namespace std;
 
 int main() {
-	int total = 0;
-	for (int i = 0; i <= 10; i++){
-		total *= i;
-	}
-	cout << "THe product of the first ten positive integers is: " << total << "\n";
-	return 0;
+    int total;
+    for (int i = 1; i <= 10; i++){
+        if (!total){
+            total = i;
+        }else{
+
+            total = total * i;
+            cout << total << " *= " << i << "\n";
+        }
+    }
+    cout << "The product of the first ten positive integers is: " << total << "\n";
+    return 0;
 }
 
