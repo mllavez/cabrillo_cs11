@@ -6,9 +6,9 @@ using namespace std;
 int main(){
     double income, tax, remain = 0.0;
 
-    cout << "What were your earnings (enter dollars & cents as a decimal without a dollar sign. i.e. 70000.80)";
+    cout << "What's your gross income? (Enter a income without a dollar sign. i.e. 700000.80)\n";
     cin >> income;
-    remain = 0
+    remain = income;
 
     while( remain > 0 ) {
         tax = .01 * income;
@@ -50,11 +50,14 @@ int main(){
         remain -= bracket5_diff;
         tax += .05 * bracket5_diff;
 
+        if(remain > 0){
+            tax += .06 * remain;
+            remain = 0;
+        }
 
         remain = 0;
     }
 
-
-    cout << "You would owe: $ " << fixed << setprecision(2) << tax;
+    cout << "Your total tax liability, circa 1913, would be\n$" << fixed << setprecision(2) << tax << "\n";
     return 0;
 }
