@@ -22,7 +22,7 @@ int main(){
     TAX_STEP_5 = 500000,
     BRACKET_4_DIFF = TAX_STEP_5 - 1 - TAX_STEP_4;
 
-    cout << "What's your gross income? (Enter a income without a dollar sign. i.e. 700000.80)\n";
+    cout << "What's your gross income?\n";
     cin >> income;
     remain = income;
 
@@ -71,7 +71,7 @@ int main(){
     tax += RATE_5 * BRACKET_4_DIFF;
 
     if(remain > 0){
-        tax += RATE_7 * remain;
+        tax += RATE_6 * remain;
         cout << "Your total tax liability, circa 1913, would be\n$" << fixed << setprecision(2) << tax << "\n";
         return 0;
 
