@@ -10,21 +10,27 @@
 using namespace std;
 
 int main(){
-    double sum = 0.0, temp = sum, prev = sum, min = sum, max = sum;
+    double sum = 0.0, temp = sum, min = sum, max = sum;
     int count = 0;
 
     cout << "Enter doubles, EOF to quit: \n";
 
     while(cin >> temp){
-        prev = temp;
-        if(temp < prev){
-            min = temp;
-        }
-        if(temp > prev){
-            max = temp;
-        }
+
         sum += temp;
         count++;
+
+        if(count == 1){
+            min = max = temp;
+            break;
+        }
+
+        if(temp < min){
+            min = temp;
+        }
+        if(temp > max){
+            max = temp;
+        }
     }
     if (!count){
         cout << "no input\n";
