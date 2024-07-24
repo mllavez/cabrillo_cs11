@@ -20,6 +20,19 @@ bool isMoveLegal(int board[3][3], int, int);
 // return 2 if player 2 'O' has won
 // return 0 if neither player has won
 int winner(int board[3][3]){
+    if(
+        board[0][0] == board[0][1] == board[0][2] && board[0][0] != "." ||
+        board[1][0] == board[1][1] == board[1][2] && board[1][0] != "." ||
+        board[2][0] == board[2][1] == board[2][2] && board[2][0] != "." ||
+        board[0][0] == board[1][0] == board[2][1] && board[0][0] != "." ||
+        board[0][1] == board[1][1] == board[2][1] && board[0][1] != "." ||
+        board[0][2] == board[1][2] == board[2][2] && board[0][2] != "." ||
+        board[0][0] == board[1][1] == board[2][2] && board[0][0] != "." ||
+        board[0][2] == board[1][1] == board[2][0] && board[0][2] != "."
+    ){
+
+
+
   return 0;
 }
 
@@ -36,7 +49,7 @@ void drawBoard(int board[3][3]){
 
 
 // return false if row or column are out of bounds
-// or if that spot on the board is already taken 
+// or if that spot on the board is already taken
 // otherwise return true
 bool isMoveLegal(int board[3][3], int row, int column){
   return true;
@@ -60,7 +73,7 @@ int main(){
   int player = 1;
   int row, column, result;
   bool legalMove;
-  
+
   // starting board
   drawBoard(board);
   while(!isGameOver(board)){
