@@ -12,13 +12,17 @@ using namepsace std;
 
 class Vigenere{
 public:
-    Vigenere(string keyword);
-    string encrypt(string);
-    string decrypt(string);
-    string simplify(string);
+Vigenere(string keyword);
+string encrypt(string);
+string decrypt(string);
+string simplify(string);
 private:
-    char shift(char, char);
-    string keyword;
+char shift(char, char);
+string keyword;
+char alphabet[] = {
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+    'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+    'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 };
 
 Vigenere::Vigenere(string shiftKeyword){
@@ -39,8 +43,6 @@ int main(int argc, char *argv[]){
         cerr << "USEAGE: " << argv[0] << " -d|e keyword" << endl;
         exit(1);
     }
-
-    string inputKeyword(argv[2]);
 
     bool encrypt;
     string option(argv[1]);
